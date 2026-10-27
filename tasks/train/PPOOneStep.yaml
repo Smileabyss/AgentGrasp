@@ -1,0 +1,12 @@
+params:
+  name: "ppo_onestep"
+  is_vision: True
+  init_noise_std: 0.8
+  policy:
+    backbone_type: 'pn'
+    freeze_backbone: False
+    pi_hid_sizes: [1024, 1024, 512, 512]
+    vf_hid_sizes: [1024, 1024, 512, 512]
+    activation: elu
+    pc_shape: [512, 3]
+    pc_emb_dim: 128

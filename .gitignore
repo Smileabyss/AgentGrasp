@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+world_model/samples/.world_model_cache/
+world_model/runs_world_model/*/latest.pt
+runs_ppo/
+
+# Large local datasets, training outputs, and model checkpoints.
+datasets/
+runs/
+ckpt/
+world_model/runs_world_model/
+external/PoinTr/pretrained/
+
+# Vendored dependencies are maintained as separate repositories.
+external/PoinTr/
+external/Pointnet2_PyTorch/

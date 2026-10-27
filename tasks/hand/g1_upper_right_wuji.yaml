@@ -1,0 +1,182 @@
+name: g1_upper_right_wuji
+robotBaseLink: pelvis
+robotAssetFile: robot/g1inspirehand/g1_upper_15dof_with_wuji_hand.urdf
+robotAssetFileVisualRealistic: robot/g1inspirehand/g1_upper_15dof_with_wuji_hand.urdf
+robotStartPose:
+- 7.2e-06
+- 0.10021
+- 0.1
+- 0.0
+- 0.0
+- 0.0
+- 1.0
+objectResetPositionRange:
+- - 0.30
+  - 0.45
+- - -0.15
+  - 0.05
+- - 0.1
+  - 0.12
+arm_dof_names:
+- right_shoulder_pitch_joint
+- right_shoulder_roll_joint
+- right_shoulder_yaw_joint
+- right_elbow_joint
+- right_wrist_roll_joint
+- right_wrist_pitch_joint
+- right_wrist_yaw_joint
+active_hand_dof_names:
+- right_finger1_joint1
+- right_finger1_joint2
+- right_finger1_joint3
+- right_finger1_joint4
+- right_finger2_joint1
+- right_finger2_joint2
+- right_finger2_joint3
+- right_finger2_joint4
+- right_finger3_joint1
+- right_finger3_joint2
+- right_finger3_joint3
+- right_finger3_joint4
+- right_finger4_joint1
+- right_finger4_joint2
+- right_finger4_joint3
+- right_finger4_joint4
+- right_finger5_joint1
+- right_finger5_joint2
+- right_finger5_joint3
+- right_finger5_joint4
+# Dataset order: index, little, middle, ring, thumb_1, thumb_2.
+# Wuji finger1 is the thumb; finger2 through finger5 are index through little.
+reference_hand_source_indices: [4, 5, 5, 5, 0, 0, 0, 0, 2, 2, 2, 2, 3, 3, 3, 3, 1, 1, 1, 1]
+hand_dof_names:
+- right_finger1_joint1
+- right_finger1_joint2
+- right_finger1_joint3
+- right_finger1_joint4
+- right_finger2_joint1
+- right_finger2_joint2
+- right_finger2_joint3
+- right_finger2_joint4
+- right_finger3_joint1
+- right_finger3_joint2
+- right_finger3_joint3
+- right_finger3_joint4
+- right_finger4_joint1
+- right_finger4_joint2
+- right_finger4_joint3
+- right_finger4_joint4
+- right_finger5_joint1
+- right_finger5_joint2
+- right_finger5_joint3
+- right_finger5_joint4
+palm_link: right_palm_link
+fingertips_link:
+- right_finger1_tip_link
+- right_finger2_tip_link
+- right_finger3_tip_link
+- right_finger4_tip_link
+- right_finger5_tip_link
+eef_link: right_palm_link
+num_arm_dofs: 7
+palm_offset:
+- 0
+- 0
+- 0
+default_dof_pos: []
+default_dof_pos_by_name:
+  waist_yaw_joint: 0.0
+  waist_roll_joint: 0.0
+  waist_pitch_joint: 0.0
+  left_shoulder_pitch_joint: 1.08210414
+  left_shoulder_roll_joint: 1.29154365
+  left_shoulder_yaw_joint: 0.0
+  left_elbow_joint: 0.8
+  left_wrist_roll_joint: 0.0
+  left_wrist_pitch_joint: 0.0
+  left_wrist_yaw_joint: 0.0
+  right_shoulder_pitch_joint: 1.08210414 #-1.2
+  right_shoulder_roll_joint: -1.29154365
+  right_shoulder_yaw_joint: 0.0
+  right_elbow_joint: 0.8
+  right_wrist_roll_joint: 0.0
+  right_wrist_pitch_joint: 0.0
+  right_wrist_yaw_joint: 0.0
+  left_finger1_joint1: 0.0475
+  left_finger1_joint2: 0.0
+  left_finger1_joint3: 0.0
+  left_finger1_joint4: 0.0
+  left_finger2_joint1: 0.0
+  left_finger2_joint2: 0.0
+  left_finger2_joint3: 0.0
+  left_finger2_joint4: 0.0
+  left_finger3_joint1: 0.0
+  left_finger3_joint2: 0.0
+  left_finger3_joint3: 0.0
+  left_finger3_joint4: 0.0
+  left_finger4_joint1: 0.0
+  left_finger4_joint2: 0.0
+  left_finger4_joint3: 0.0
+  left_finger4_joint4: 0.0
+  left_finger5_joint1: 0.0
+  left_finger5_joint2: 0.0
+  left_finger5_joint3: 0.0
+  left_finger5_joint4: 0.0
+  right_finger1_joint1: 0.0475
+  right_finger1_joint2: 0.0
+  right_finger1_joint3: 0.0
+  right_finger1_joint4: 0.0
+  right_finger2_joint1: 0.0
+  right_finger2_joint2: 0.0
+  right_finger2_joint3: 0.0
+  right_finger2_joint4: 0.0
+  right_finger3_joint1: 0.0
+  right_finger3_joint2: 0.0
+  right_finger3_joint3: 0.0
+  right_finger3_joint4: 0.0
+  right_finger4_joint1: 0.0
+  right_finger4_joint2: 0.0
+  right_finger4_joint3: 0.0
+  right_finger4_joint4: 0.0
+  right_finger5_joint1: 0.0
+  right_finger5_joint2: 0.0
+  right_finger5_joint3: 0.0
+  right_finger5_joint4: 0.0
+num_obs_dict:
+  armdof: 7
+  handdof: 20
+  fulldof: 57
+  eefpose: 7
+  ftpos: 15
+  palmpose: 7
+  handposerror: 20
+  lastact: 27
+  objxyz: 3
+  objpose: 7
+  objinitpose: 7
+  pcfeat: 64
+  refaction: 27
+  objpcl: 1536
+numActions: 27
+# Map the Wuji palm frame to the FR3 Inspire trajectory palm frame by matching
+# the five finger-root positions in the two URDFs (offset is xyz + xyzw).
+trajectoryEefOffsetByArm:
+  left:
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 1.0
+  right:
+  - -0.004569
+  - 0.005434
+  - -0.066197
+  - 0.688058
+  - 0.720080
+  - 0.073981
+  - 0.050881
+dualArm: true
+left_eef_link: left_palm_link
+right_eef_link: right_palm_link
