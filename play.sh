@@ -189,38 +189,25 @@ python -m world_model.test_world_model \
 # fr3_inspire_tac
 # g1_upper_right_wuji
 
+
 python -m testing.search_latent_grasp \
-  --dataset datasets/wuji_grasp.npz \
-  --ae-checkpoint runs/trajectory_ae/ae_10.pt \
-  --flow-checkpoint runs/latent_flow/flow_10.pt \
-  --pointcloud-ae-checkpoint runs/object_pointcloud_ae/best.pt \
-  --object-index 0 \
+  --dataset datasets/inspire_grasp.npz \
+  --ae-checkpoint runs/trajectory_ae/best.pt \
+  --flow-checkpoint runs/latent_flow/best.pt \
+  --stage2-ae-checkpoint runs/trajectory_ae/ae_10.pt \
+  --stage2-flow-checkpoint runs/latent_flow/flow_10.pt \
+  --object-index 55 \
   --population-size 64 \
   --iterations 10 \
+  --twostage_iterations 10 \
+  --estimate_xyzrpy=True \
   task=grasp \
   hand=g1_upper_right_wuji \
   num_envs=64 \
   headless=True \
-  task.env.armController=pose
-
-# python -m testing.search_latent_grasp \
-#   --dataset datasets/inspire_grasp.npz \
-#   --ae-checkpoint runs/trajectory_ae/best.pt \
-#   --flow-checkpoint runs/latent_flow/best.pt \
-#   --stage2-ae-checkpoint runs/trajectory_ae/ae_10.pt \
-#   --stage2-flow-checkpoint runs/latent_flow/flow_10.pt \
-#   --object-index 55 \
-#   --population-size 64 \
-#   --iterations 10 \
-#   --twostage_iterations 10 \
-#   --estimate_xyzrpy=True \
-#   task=grasp \
-#   hand=g1_upper_right_wuji \
-#   num_envs=64 \
-#   headless=True \
-#   task.env.armController=pose  \
-#   --action-noise-std 0.01 \
-#   --action-noise-fraction 0.25
+  task.env.armController=pose  \
+  --action-noise-std 0.01 \
+  --action-noise-fraction 0.25
 
 
 python -m testing.test_g1_head_camera \
